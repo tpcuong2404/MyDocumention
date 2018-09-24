@@ -1,0 +1,58 @@
+ABSTRACT
+* Tính trừu tượng là một tiến trình 
+  + ẩn các chi tiết trình triển khai và chỉ hiển thị tính năng tới người dùng. 
+  + Nói cách khác, nó chỉ hiển thị các thứ quan trọng tới người dùng và ẩn các chi tiết nội tại, 
+  + ví dụ: để gửi tin nhắn, người dùng chỉ cần soạn text và gửi tin. Bạn không biết tiến trình xử lý nội tại về phân phối tin nhắn.
+
+  * Một phương thức abstract không có thân phương thức. Nghĩa là chỉ khai báo phương thức mà không cần định nghĩa phương thức đó
+  + VD: abstract int MaxNumber(int a, int b){
+          //để rỗng
+        }
+      
+INTERFACE
++ Một Interface trong Java là một bản thiết kế của một lớp. (KHÔNG PHẢI LÀ LỚP)
++ Nó chỉ có các phương thức trừu tượng. (TẤT CẢ PHƯƠNG THỨC CỦA INTERFACE ĐỀU LÀ ABSTRACT.
++ Một interface:
+  không kế thừa Class
+  nhưng kế thừa nhiều interface khác.
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _   
+  * triển khai một interface
+  
+  1. Class interface:
+      interface printable{  
+        void print();  
+      }
+  2. Class triển khai interface: Sử dụng từ khóa [implements] và định nghĩa lại các hàm trong interface khai báo.
+      class A6 implements printable{  
+        public void print(){System.out.println("Hello");} 
+      }
+  3. Class Main(): thực thi chương trình
+      public static void main(String args[]){  
+          A6 obj = new A6();  
+              obj.print();  
+          }  
+      }
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _       
+  * chúng ta cũng có thể triển khai nhiều interface cùng một lúc:
+  
+  interface Printable{  
+      void print();  
+  }  
+
+  interface Showable{  
+      void show();  
+  }  
+
+  class A7 implements Printable,Showable{   // triển khai 2 interface cùng lúc
+
+      public void print(){System.out.println("Hello");}  
+      public void show(){System.out.println("Welcome");}  
+      
+      //main
+      public static void main(String args[]){  
+          A7 obj = new A7();  
+          obj.print();  
+          obj.show();  
+       }  
+  } 
+  
