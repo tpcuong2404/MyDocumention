@@ -1,0 +1,42 @@
+1. Run Sublime Text 3 
+2. Click -> Tools -> Developer -> New Snippet
+   *OR: Click -> Tools -> New Snippet.
+   
+3. Change content 
+    FROM:
+                <snippet>
+                  <content><![CDATA[
+                Hello, ${1:this} is a ${2:snippet}.
+                ]]></content>
+                  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+                  <!-- <tabTrigger>hello</tabTrigger> -->
+                  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+                  <!-- <scope>source.python</scope> -->
+                </snippet>
+    TO:
+                <snippet>
+                  <content><![CDATA[
+                    <!DOCTYPE html>
+                    <html>
+                      <head>
+                        <title>$1</title>
+                        <meta charset="UTF-8">
+                      </head>
+                      <body>
+                        $2
+                      </body>
+                    </html>			
+                ]]></content>
+                <tabTrigger>html5</tabTrigger>
+                <scope>text.html</scope>
+                </snippet>
+                
+4. Ctrl + S (Save as)                 
+   Name_file: [html-html5.subline-snippet]
+   
+5. Usage: 
+  run Sublime 
+  -> new file 
+  -> save as (name file: test.html) 
+  -> write code: html5 +  TAB
+  
